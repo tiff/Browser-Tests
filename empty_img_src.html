@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- YOU CAN FIND THIS PAGE HERE: http://tifftiff.de/browser_tests/empty_img_src.html -->
+<title>empty/unset IMG src</title>
+<h3>Checks whether browser does a http request when src attribute is empty or not set</h3>
+
+<div>IMG with unset src: <img alt="foo" width="20" height="20"></div>
+<div>IMG with empty src: <img alt="foo" src="" width="20" height="20"></div>
+
+<h3>Cross browser results</h3>
+<dl>
+  <dt>Firefox 3.6:</dt>
+  <dd>No http-request is done</dd>
+  
+  <dt>Firefox 3.0:</dt>
+  <dd><strong>Only the img with the src="" causes a http request</strong></dd>
+  
+  <dt>Internet Explorer 6.0:</dt>
+  <dd><strong>Only the img with the src="" causes a http request</strong></dd>
+  
+  <dt>Internet Explorer 7.0:</dt>
+  <dd><strong>Only the img with the src="" causes a http request</strong></dd>
+  
+  <dt>Internet Explorer 8.0:</dt>
+  <dd><strong>Only the img with the src="" causes a http request</strong></dd>
+  
+  <dt>Internet Explorer 9.0:</dt>
+  <dd>No http-request is done</dd>
+  
+  <dt>Safari 4.0.3</dt>
+  <dd><strong>Only the img with the src="" causes a http request</strong></dd>
+  
+  <dt>Safari 5</dt>
+  <dd><strong>Only the img with the src="" causes a http request</strong></dd>
+  
+  <dt>Chrome 8:</dt>
+  <dd>No http-request is done</dd>
+  
+  <dt>Opera 11:</dt>
+  <dd>No http-request is done</dd>
+</dl>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- YOU CAN FIND THIS PAGE HERE: http://tifftiff.de/browser_tests/paste_event.html -->
+<title>paste Event</title>
+
+<h3>Go ahead and paste something in the textarea below</h3>
+<textarea id="text" style="width: 400px; height: 200px;"></textarea>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+
+<hr>
+
+<h3>Your Results:</h3>
+<ul id="log" style="color: #666;"></ul>
+
+<script>
+  $("text").on("beforepaste", function() {
+    if (this.value) {
+      $("log").innerHTML += "<li>Beforepaste event fired AFTER text got inserted"
+    } else {
+      $("log").innerHTML += "<li>Beforepaste event fired BEFORE text got inserted"
+    }
+  });
+  
+  $("text").on("paste", function() {
+    if (this.value) {
+      $("log").innerHTML += "<li>Paste event fired AFTER text got inserted<br>"
+    } else {
+      $("log").innerHTML += "<li>Paste event fired BEFORE text got inserted<br>"
+    }
+  });
+</script>
+
+<hr>
+
+<h3>Cross browser results</h3>
+<h4>Firefox 3.6</h4>
+<ul>
+  <li>No support for 'beforepaste'</li>
+  <li>Paste event is fired BEFORE text got inserted</li>
+</ul>
+
+<h4>Chrome 8</h4>
+<ul>
+  <li>No support for 'beforepaste'</li>
+  <li>Paste event is fired BEFORE text got inserted</li>
+</ul>
+
+<h4>Internet Explorer 8</h4>
+<ul>
+  <li>Supports 'beforepaste'</li>
+  <li>Paste event is fired BEFORE text got inserted</li>
+</ul>
